@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema | Colheita+</title>
+  <link rel="icon" href="assets/img/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="sistema">
+
+  <header class="site-header">
+    <a class="brand" href="home.html">
+      <img class="brand-logo" src="assets/img/logo-white.png" alt="Colheita+">
+      
+    </a>
+    <div class="profile">
+      <button class="profile-btn" id="profileBtn" title="Perfil" aria-label="Perfil">
+        <img src="assets/img/perfil.png" alt="Perfil">
+      </button>
+      <div class="profile-menu" id="profileMenu"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="big-cards">
+      <button class="big-card blue" id="btnCadastrar">
+        <h3>Cadastrar Propriedade</h3>
+        <p>Cadastre sua propriedade e comece a gerenciar sua produção!</p>
+      </button>
+      <button class="big-card purple" id="btnGerenciar">
+        <h3>Gerenciar Propriedade</h3>
+        <p>Gerencia as suas propriedades já cadastradas e mantenha tudo em ordem!</p>
+      </button>
+    </section>
+  </main>
+
+  <!-- Modal: cadastrar / editar propriedade -->
+  <div class="modal-overlay" id="modalForm">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 id="modalFormTitle">Cadastrar Propriedade</h3>
+        <button class="modal-close" data-close aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-msg" id="propMsg"></div>
+        <form id="formProp" novalidate>
+          <input type="hidden" id="propId">
+          <div class="field">
+            <label for="propNome">Nome da propriedade:</label>
+            <input type="text" id="propNome" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="propLocal">Localização:</label>
+              <input type="text" id="propLocal" placeholder="Cidade / Estado">
+            </div>
+            <div class="field">
+              <label for="propArea">Área (hectares):</label>
+              <input type="number" id="propArea" min="0" step="0.01">
+            </div>
+          </div>
+          <div class="field">
+            <label for="propCultura">Cultura principal:</label>
+            <input type="text" id="propCultura" placeholder="Ex.: Soja, Milho, Café">
+          </div>
+          <div class="field">
+            <label for="propObs">Observações:</label>
+            <input type="text" id="propObs" placeholder="Informações adicionais">
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-outline" data-close>Cancelar</button>
+            <button type="submit" class="btn" id="propSubmit">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: gerenciar propriedades -->
+  <div class="modal-overlay" id="modalList">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>Minhas Propriedades</h3>
+        <button class="modal-close" data-close aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="prop-list" id="propList"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-logo"><img src="assets/img/logo.png" alt="Colheita+"></div>
+    <div>
+      <h4>Contatos:</h4>
+      <ul>
+        <li>(17) 1234-5678</li>
+        <li>colheitamais@gmail.com</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Suporte:</h4>
+      <ul><li>Manual</li></ul>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/sistema.js"></script>
+</body>
+</html>
